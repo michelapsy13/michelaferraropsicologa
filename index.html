@@ -15,99 +15,122 @@
             scroll-behavior: smooth;
         }
 
-        /* MENU LATERALE FISSO */
+        /* MENU A TENDINA MINIMAL */
         .sidebar {
-            width: 200px;
-            height: 100vh;
-            background-color: #333;
-            padding-top: 20px;
             position: fixed;
-            left: 0;
-            top: 0;
+            left: 40px;
+            top: 40px;
             z-index: 1000;
         }
 
-        .sidebar a {
+        .menu-trigger {
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: bold;
+            color: #333;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-content a {
             display: block;
-            color: white;
+            color: #333;
             text-decoration: none;
-            padding: 15px;
-            font-size: 18px;
+            padding: 10px 15px;
+            font-size: 16px;
             transition: 0.3s;
         }
 
-        .sidebar a:hover {
-            background-color: #575757;
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
         }
 
-        /* SEZIONE 1: IMMAGINE A TUTTO SCHERMO */
+        /* MOSTRA IL MENU AL CLICK */
+        .sidebar:hover .dropdown-content {
+            display: block;
+        }
+
+        /* SEZIONE 1: ALTO (SFONDO BIANCO) */
         .hero {
-            margin-left: 200px;
             height: 100vh;
-            background: url('LogoMikipsy.png') no-repeat center center;
-            background-size: cover; /* L'immagine copre tutto lo schermo */
+            background-color: white; /* Sfondo bianco come richiesto */
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
+            text-align: center;
+        }
+
+        .hero img {
+            max-width: 400px;
+            width: 80%;
+            height: auto;
+            margin-bottom: 20px;
         }
 
         .hero-title {
-            color: white;
-            font-size: 60px;
+            color: #333;
+            font-size: 45px;
+            font-style: italic; /* Nome in corsivo */
             font-weight: normal;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Per leggere bene il nome sulla foto */
             margin: 0;
         }
 
-        /* SEZIONE 2: CONTENUTO DOPO LO SCROLL */
+        /* SEZIONE 2: CONTENUTO (SFONDO ROSA) */
         .main-content {
-            margin-left: 200px;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: space-around; /* Mette Home a sinistra e testo a destra */
+            justify-content: space-around;
             padding: 0 10%;
             box-sizing: border-box;
         }
 
         .home-label {
-            font-size: 80px;
+            font-size: 120px;
             font-weight: bold;
-            color: rgba(0,0,0,0.05); /* Effetto testo grande sbiadito come reference */
+            color: rgba(0,0,0,0.03); /* Scritta Home gigante e quasi invisibile */
             text-transform: uppercase;
+            user-select: none;
         }
 
         .text-container {
-            max-width: 500px;
+            max-width: 550px;
             text-align: left;
         }
 
         .intro-text {
-            font-size: 24px;
+            font-size: 26px;
             font-style: italic;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .quote-bottom {
             font-size: 20px;
             font-style: italic;
-            color: #666;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
+            color: #777;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 15px;
         }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .sidebar {
-                width: 100%; height: auto; position: relative;
-                display: flex; flex-wrap: wrap; justify-content: center;
-            }
-            .hero, .main-content { margin-left: 0; }
-            .hero-title { font-size: 40px; }
+            .hero-title { font-size: 30px; }
             .main-content { flex-direction: column; text-align: center; }
-            .home-label { font-size: 50px; margin-bottom: 20px; }
+            .home-label { font-size: 60px; margin-bottom: 20px; }
+            .sidebar { left: 20px; top: 20px; }
         }
     </style>
 </head>
@@ -115,14 +138,18 @@
 <body>
 
     <div class="sidebar">
-        <a href="index.html">Home</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="cosa-faccio.html">Di cosa mi occupo</a>
-        <a href="blog.html">Blog</a>
-        <a href="contatti.html">Contatti</a>
+        <button class="menu-trigger">Menu</button>
+        <div class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="cosa-faccio.html">Di cosa mi occupo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
     </div>
 
     <div class="hero">
+        <img src="LogoMikipsy.png" alt="Michela Ferraro Logo">
         <h1 class="hero-title">Michela Ferraro</h1>
     </div>
 
