@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Michela Ferraro</title>
+    <title>Michela Ferraro - Psicologa Clinica</title>
 
     <style>
-        body {
+        body, html {
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            display: flex;
             background-color: rgba(250, 232, 228, 1);
             color: #333;
+            scroll-behavior: smooth;
         }
 
-        /* MENU LATERALE */
+        /* MENU LATERALE FISSO */
         .sidebar {
             width: 200px;
             height: 100vh;
             background-color: #333;
             padding-top: 20px;
             position: fixed;
+            left: 0;
+            top: 0;
             z-index: 1000;
         }
 
@@ -37,61 +40,74 @@
             background-color: #575757;
         }
 
-        /* CONTENUTO */
-        .content {
+        /* SEZIONE 1: IMMAGINE A TUTTO SCHERMO */
+        .hero {
             margin-left: 200px;
-            width: calc(100% - 200px);
+            height: 100vh;
+            background: url('logomiki.png') no-repeat center center;
+            background-size: cover; /* L'immagine copre tutto lo schermo */
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
+        }
+
+        .hero-title {
+            color: white;
+            font-size: 60px;
+            font-weight: normal;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Per leggere bene il nome sulla foto */
+            margin: 0;
+        }
+
+        /* SEZIONE 2: CONTENUTO DOPO LO SCROLL */
+        .main-content {
+            margin-left: 200px;
             min-height: 100vh;
-            text-align: center;
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around; /* Mette Home a sinistra e testo a destra */
+            padding: 0 10%;
             box-sizing: border-box;
-        } 
-
-        /* Citazione in alto */
-        .quote {
-            font-style: italic;
-            font-size: 26px;
-            max-width: 750px;
-            color: #555;
-            margin-bottom: 10px; 
-            line-height: 1.2;
-        }
-        
-        /* Immagine Tagliata */
-        .content img {
-            width: 85%;
-            max-width: 950px; 
-            height: 400px; 
-            object-fit: cover; 
-            object-position: center; 
-            border-radius: 20px;
-            margin-bottom: 15px;
         }
 
-        /* Testo presentazione TUTTO IN CORSIVO, NO GRASSETTO */
+        .home-label {
+            font-size: 80px;
+            font-weight: bold;
+            color: rgba(0,0,0,0.05); /* Effetto testo grande sbiadito come reference */
+            text-transform: uppercase;
+        }
+
+        .text-container {
+            max-width: 500px;
+            text-align: left;
+        }
+
         .intro-text {
             font-size: 24px;
-            font-style: italic; /* Tutto in corsivo */
-            font-weight: normal; /* Niente grassetto */
-            max-width: 850px;
-            line-height: 1.5;
-            color: #222;
-            margin-top: 0;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .quote-bottom {
+            font-size: 20px;
+            font-style: italic;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
         }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            body { flex-direction: column; }
             .sidebar {
                 width: 100%; height: auto; position: relative;
                 display: flex; flex-wrap: wrap; justify-content: center;
             }
-            .content { margin-left: 0; width: 100%; }
-            .content img { height: 300px; }
+            .hero, .main-content { margin-left: 0; }
+            .hero-title { font-size: 40px; }
+            .main-content { flex-direction: column; text-align: center; }
+            .home-label { font-size: 50px; margin-bottom: 20px; }
         }
     </style>
 </head>
@@ -106,15 +122,23 @@
         <a href="contatti.html">Contatti</a>
     </div>
 
-    <div class="content">
-        <p class="quote">"Mostrare le tue ferite non ti rende debole, ti rende umano"</p>
+    <div class="hero">
+        <h1 class="hero-title">Michela Ferraro</h1>
+    </div>
 
-        <img src="logomiki.png" alt="Michela Ferraro - Psicologa Clinica">
-        
-        <p class="intro-text">
-            Sono Michela Ferraro psicologa clinica e lavoro con adolescenti e giovani adulti, 
-            accompagnandoli nei momenti di cambiamento, fatica e crescita.
-        </p>
+    <div class="main-content">
+        <div class="home-label">Home</div>
+
+        <div class="text-container">
+            <p class="intro-text">
+                Sono una psicologa clinica e lavoro con adolescenti e giovani adulti, 
+                accompagnandoli nei momenti di cambiamento, fatica e crescita.
+            </p>
+            
+            <p class="quote-bottom">
+                "Mostrare le tue ferite non ti rende debole, ti rende umano"
+            </p>
+        </div>
     </div>
 
 </body>
