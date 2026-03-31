@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Sono - Michela Ferraro</title>
 
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgba(250, 232, 228, 1); /* Il tuo rosa */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* MENU A TENDINA (Identico alla Home per coerenza) */
+        .sidebar {
+            position: fixed;
+            left: 40px;
+            top: 40px;
+            z-index: 1000;
+        }
+
+        .menu-trigger {
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: normal;
+            font-style: italic;
+            color: #000;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f5f5f5;
+        }
+
+        .sidebar:hover .dropdown-content {
+            display: block;
+        }
+
+        /* LAYOUT CONTENUTO */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 40px 60px 40px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .profile-section img {
+            width: 350px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .bio-text {
+            flex: 1;
+        }
+
+        .bio-text h1 {
+            font-size: 40px;
+            font-style: italic;
+            font-weight: normal;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .bio-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            font-style: italic;
+            color: #444;
+        }
+
+        /* SEZIONE FORMAZIONE */
+        .education-section {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 50px;
+        }
+
+        .education-section h2 {
+            font-size: 28px;
+            font-style: italic;
+            font-weight: normal;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .edu-item {
+            margin-bottom: 25px;
+        }
+
+        .edu-item h3 {
+            font-size: 20px;
+            margin: 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .edu-item p {
+            font-size: 16px;
+            margin: 5px 0 0 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-section img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+            .sidebar { left: 20px; top: 20px; }
+            .container { padding-top: 80px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <button class="menu-trigger">Menu</button>
+        <div class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="cosa-faccio.html">Di cosa mi occupo</a>
+            <a href="blog.html">Blog</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="profile-section">
+            <img src="michela-foto.jpg" alt="Michela Ferraro">
+            
+            <div class="bio-text">
+                <h1>Chi sono</h1>
+                <p>
+                    Sono Michela Ferraro, psicologa clinica dedicata al benessere di adolescenti e giovani adulti. 
+                    Il mio approccio si basa sull'ascolto empatico e sulla creazione di uno spazio sicuro 
+                    dove ogni fatica può essere trasformata in un'opportunità di crescita.
+                </p>
+                <p>
+                    Credo fermamente che la terapia sia un viaggio condiviso, un percorso in cui 
+                    le ferite non vengono solo curate, ma comprese come parte integrante della propria storia.
+                </p>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2>Formazione</h2>
+            
+            <div class="edu-item">
+                <h3>Laurea in Psicologia Clinica</h3>
+                <p>Università degli Studi [Nome Università] - Anno</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>Iscrizione all'Albo degli Psicologi</h3>
+                <p>Regione [Nome Regione], N. [Numero Iscrizione]</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>Specializzazione in [Eventuale ambito]</h3>
+                <p>Istituto [Nome Istituto] - In corso / Completata</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>Master in [Eventuale Master]</h3>
+                <p>Descrizione breve del master conseguito.</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
